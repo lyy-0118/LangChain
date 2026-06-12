@@ -1,0 +1,24 @@
+claude --dangerously-skip-permissions
+
+安装LangChain和LangGraph
+
+配置清华源
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+
+检查：
+conda config --show channels
+应该能看到清华镜像地址。
+
+创建独立conda环境
+conda create -n langchain python=3.11 -y
+激活conda环境
+conda activate langchain
+
+安装常用包
+pip install -U langchain langchain-core langchain-openai langchain-community langgraph langsmith
+pip install python-dotenv tiktoken
+
+安装完成后验证，查看版本：
+pip list | findstr lang
